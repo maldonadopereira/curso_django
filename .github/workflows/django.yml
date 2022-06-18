@@ -25,6 +25,11 @@ jobs:
         pipenv sync --dev
         cp contrib/env-sample .env
 
+    - name: Testando Banco de dados
+      run: |
+        psql -c "CREATE DATABASE testdb;" -U postgres
+        
+
     - name: Fazendo lint
       run: |
         pipenv run flake8
