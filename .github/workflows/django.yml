@@ -11,21 +11,19 @@ jobs:
       PIPENV_IGNORE_VIRTUALENVS: 1
 
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: 3.10.0
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: 3.10.0
+
     - name: Install Dependencies
       run: |
-        pip install pipenv
-        pipenv sync -d
+        sudo pip install pipenv
+        pipenv sync --dev
+        pipenv run pip freeze
 
     - name: Fazer lint
       run: |
