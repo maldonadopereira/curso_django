@@ -25,6 +25,7 @@ jobs:
         pipenv sync --dev
         cp contrib/env-sample .env
 
+
     - name: Fazendo lint
       run: |
         pipenv run flake8
