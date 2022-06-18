@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9013d9fd9f2f8dbe43d79d399d34dc184ba2bc7eb5de7d411636e8c0b8c37a1c"
+            "sha256": "ec761083328f49b7f86b521abf1a069e1debf99669834f4f86b04158fdcfc38f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -32,6 +32,22 @@
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
             "version": "==21.4.0"
         },
+        "boto3": {
+            "hashes": [
+                "sha256:0b9757575b8003928defc5fb6e816936fa1bdb1384d0edec6622bb9fb104e96c",
+                "sha256:f39b91a4c3614db8e44912ee82426fb4b16d5df2cd66883f3aff6f76d7f5d310"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==1.24.12"
+        },
+        "botocore": {
+            "hashes": [
+                "sha256:17d3ec9f684d21e06b64d9cb224934557bcd95031e2ecb551bf16271e8722fec",
+                "sha256:b8ac156e55267da6e728ea0b806bfcd97adf882801cffe7849c4b88ce4780326"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==1.27.12"
+        },
         "django": {
             "hashes": [
                 "sha256:502ae42b6ab1b612c933fb50d5ff850facf858a4c212f76946ecd8ea5b3bf2d9",
@@ -39,6 +55,21 @@
             ],
             "index": "pypi",
             "version": "==4.0.5"
+        },
+        "django-s3-folder-storage": {
+            "hashes": [
+                "sha256:eb5fd3994726f5b87ddc0ea1a6f1af3f598f9d743127c27d6dae111d18a79abe"
+            ],
+            "index": "pypi",
+            "version": "==0.5"
+        },
+        "django-storages": {
+            "hashes": [
+                "sha256:204a99f218b747c46edbfeeb1310d357f83f90fa6a6024d8d0a3f422570cee84",
+                "sha256:a475edb2f0f04c4f7e548919a751ecd50117270833956ed5bd585c0575d2a5e7"
+            ],
+            "markers": "python_version >= '3.5'",
+            "version": "==1.12.3"
         },
         "gunicorn": {
             "hashes": [
@@ -54,6 +85,14 @@
                 "sha256:bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32"
             ],
             "version": "==1.1.1"
+        },
+        "jmespath": {
+            "hashes": [
+                "sha256:02e2e4cc71b5bcab88332eebf907519190dd9e6e82107fa7f83b1003a6252980",
+                "sha256:90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==1.0.1"
         },
         "packaging": {
             "hashes": [
@@ -165,6 +204,14 @@
             "index": "pypi",
             "version": "==4.5.2"
         },
+        "python-dateutil": {
+            "hashes": [
+                "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86",
+                "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==2.8.2"
+        },
         "python-decouple": {
             "hashes": [
                 "sha256:2838cdf77a5cf127d7e8b339ce14c25bceb3af3e674e039d4901ba16359968c7",
@@ -173,6 +220,14 @@
             "index": "pypi",
             "version": "==3.6"
         },
+        "s3transfer": {
+            "hashes": [
+                "sha256:06176b74f3a15f61f1b4f25a1fc29a4429040b7647133a463da8fa5bd28d5ecd",
+                "sha256:2ed07d3866f523cc561bf4a00fc5535827981b117dd7876f036b0c1aca42c947"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==0.6.0"
+        },
         "setuptools": {
             "hashes": [
                 "sha256:2a5de5d1ed1fd6dfbe4f1a1079af816032e2d8dfc0975265b57a61429511d10c",
@@ -180,6 +235,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==62.5.0"
+        },
+        "six": {
+            "hashes": [
+                "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
+                "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==1.16.0"
         },
         "sqlparse": {
             "hashes": [
@@ -196,6 +259,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==2.0.1"
+        },
+        "urllib3": {
+            "hashes": [
+                "sha256:44ece4d53fb1706f667c9bd1c648f5469a2ec925fcf3a776667042d645472c14",
+                "sha256:aabaf16477806a5e1dd19aa41f8c2b7950dd3c746362d7e3223dbe6de6ac448e"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4'",
+            "version": "==1.26.9"
         }
     },
     "develop": {
@@ -220,7 +291,7 @@
                 "sha256:2857e29ff0d34db842cd7ca3230549d1a697f96ee6d3fb071cfa6c7393832597",
                 "sha256:6881edbebdb17b39b4eaaa821b438bf6eddffb4468cf344f09f89def34a8b1df"
             ],
-            "markers": "python_version >= '3.5'",
+            "markers": "python_full_version >= '3.5.0'",
             "version": "==2.0.12"
         },
         "codecov": {
@@ -233,9 +304,7 @@
             "version": "==2.1.12"
         },
         "coverage": {
-            "extras": [
-                "toml"
-            ],
+            "extras": [],
             "hashes": [
                 "sha256:01c5615d13f3dd3aa8543afc069e5319cfa0c7d712f6e04b920431e5c564a749",
                 "sha256:106c16dfe494de3193ec55cac9640dd039b66e196e4641fa8ac396181578b982",
@@ -295,7 +364,7 @@
                 "sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff",
                 "sha256:9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"
             ],
-            "markers": "python_version >= '3.5'",
+            "markers": "python_full_version >= '3.5.0'",
             "version": "==3.3"
         },
         "iniconfig": {
