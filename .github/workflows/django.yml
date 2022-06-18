@@ -24,6 +24,7 @@ jobs:
         sudo pip install pipenv
         pipenv sync --dev
         pipenv run pip freeze
+        cp contrib/env-sample .env
 
     - name: Fazendo lint
       run: |
