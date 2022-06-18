@@ -19,12 +19,16 @@ jobs:
       with:
         python-version: 3.10.0
 
-    - name: Install Dependencies
+    - name: Instalando dependências
       run: |
         sudo pip install pipenv
         pipenv sync --dev
         pipenv run pip freeze
 
-    - name: Fazer lint
+    - name: Fazendo lint
       run: |
         pipenv run flake8
+
+    - name: Rodando testes automáticos
+      run: |
+        pipenv run pytest
