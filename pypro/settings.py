@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'pypro.wsgi.application'
 
 
 # Database Local
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'curso_django',
@@ -83,10 +83,10 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
-}
+}'''
 
 # Database Heroku
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dens1m53e8bcso',
@@ -96,7 +96,7 @@ DATABASES = {
         'HOST': 'ec2-52-72-56-59.compute-1.amazonaws.com',
         'PORT': '5432',  # 8000 is default
     }
-}'''
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
