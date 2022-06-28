@@ -32,7 +32,7 @@ jobs:
 
     - name: Rodando testes automáticos
       run: |
-        pipenv run pytest --cov=pypro
+        pipenv run pytest --cov
         pipenv run codecov
 
 
