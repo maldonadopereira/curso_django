@@ -1,5 +1,5 @@
 from django.contrib.admin import ModelAdmin, register
-from aperitivos.models import Video
+from pypro.aperitivos.models import Video
 
 
 @register(Video)

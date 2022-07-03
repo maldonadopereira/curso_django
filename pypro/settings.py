@@ -43,8 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'collectfast',
     'django.contrib.staticfiles',
-    'base',
-    'aperitivos',
+    # Apps Locais
+    'pypro.base',
+    'pypro.aperitivos',
+    'pypro.modulos',
 ]
 
 MIDDLEWARE = [
@@ -88,6 +90,7 @@ parse_database = partial(dj_database_url.parse, conn_max_age=600)
 DATABASES = {
     'default': config('DATABASE_URL', default=default_db_url, cast=parse_database)
 }
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
