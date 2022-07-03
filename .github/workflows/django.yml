@@ -9,8 +9,16 @@ jobs:
     env:
       PIPENV_NO_INHERIT: 1
       PIPENV_IGNORE_VIRTUALENVS: 1
-
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:11.5
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports: ['5432:5432']
 
     steps:
     - uses: actions/checkout@v3
@@ -26,17 +34,19 @@ jobs:
         cp contrib/env-sample .env
 
 
-    - name: Fazendo lint
+    - name: Fazendo lint com Flake8
       run: |
         pipenv run flake8
 
-    - name: Rodando testes automáticos
+    - name: Rodando testes automáticos com Pytest
       run: |
-        pipenv run pytest --cov
+        pipenv run pytest pypro --cov=pypro
+
+    - name: Postando Coverage
+      env:
+        CODECOV_TOKEN: "aa2a5ebd-0817-468b-b66b-8b625435f65c"
+      run: |
         pipenv run codecov
 
-
-    - name: Markdown autodocs
-      uses: dineshsonachalam/markdown-autodocs@v1.0.3
 
 
