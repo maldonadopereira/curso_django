@@ -10,10 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os.path
+from functools import partial
 from pathlib import Path
 from decouple import config, Csv
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,31 +78,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'pypro.wsgi.application'
 
 
-# Database Local
-'''DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'curso_django',
-        'USER': 'david',
-        'PASSWORD': '3284',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}'''
+# Database
+# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# Database Heroku
+default_db_url = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+
+parse_database = partial(dj_database_url.parse, conn_max_age=600)
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dens1m53e8bcso',
-        # 'NAME': os.path.join(BASE_DIR, 'mydb'),
-        'USER': 'qnswrcubovgxjh',
-        'PASSWORD': 'e0b8571c4b30982174fb25f169bd51e92e508198e721fb19ae284712ebfa6e4c',
-        'HOST': 'ec2-52-72-56-59.compute-1.amazonaws.com',
-        'PORT': '5432',  # 8000 is default
-    }
+    'default': config('DATABASE_URL', default=default_db_url, cast=parse_database)
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
