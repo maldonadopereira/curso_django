@@ -5,4 +5,5 @@ from pypro.modulos.models import Modulo
 
 @admin.register(Modulo)
 class ModumoAdmin(OrderedModelAdmin):
-    list_display = ('titulo', 'publico', 'move_up_down_links')
+    list_display = ('titulo', 'publico', 'slug', 'move_up_down_links')
+    prepopulated_fields = {'slug': ('titulo',)}

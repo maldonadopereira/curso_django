@@ -11,7 +11,7 @@
 							  </a>
 							  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								  {% for modulo in MODULOS %}
-									<a class="dropdown-item" href="#">{{ modulo.titulo }}</a>
+									<a class="dropdown-item" href="{{ modulo.get_absolute_url }}">{{ modulo.titulo }}</a>
 								  	{% empty %}<p>Sem módulos</p>
 								  {% endfor %}
 
