@@ -23,5 +23,6 @@ def test_titulo(resp, modulo: Modulo):
 def test_descricao(resp, modulo: Modulo):
     assert_contains(resp, modulo.descricao)
 
+
 def test_publico(resp, modulo: Modulo):
     assert_contains(resp, modulo.publico)
