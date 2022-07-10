@@ -17,6 +17,8 @@ sentry-sdk = "*"
 dj-database-url = "*"
 django-ordered-model = "*"
 atomicwrites = "*"
+ipython = "*"
+django-extensions = "*"
 
 [dev-packages]
 flake8 = "*"
