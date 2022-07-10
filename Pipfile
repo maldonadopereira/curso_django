@@ -16,6 +16,7 @@ django-debug-toolbar = "*"
 sentry-sdk = "*"
 dj-database-url = "*"
 django-ordered-model = "*"
+atomicwrites = "*"
 
 [dev-packages]
 flake8 = "*"
