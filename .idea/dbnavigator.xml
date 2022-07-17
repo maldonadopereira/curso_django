@@ -24,12 +24,23 @@
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
-    <show-object-properties value="true" />
+    <show-object-properties value="false" />
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="60641aad-6c64-441b-84db-0899e3c02a0f">
-      <console name="postgres@localhost" type="STANDARD" schema="public" session="Main">SELECT m.id, m.titulo, a.id, a.titulo, a.modulo_id from modulos_modulo as m join modulos_aula a on m.id = a.modulo_id;</console>
+      <console name="postgres@localhost" type="STANDARD" schema="public" session="Session 1"><![CDATA[SELECT
+    turma.id,
+    turma.nome,
+    matricula.*,
+    base_user.id,
+    base_user.email
+
+from
+    turmas_turma as turma
+
+inner join turmas_turma_matriculas as matricula on turma.id = matricula.turma_id
+inner join base_user on matricula.user_id = base_user.id]]></console>
     </connection>
     <connection id="cf38e1b7-146c-422b-986a-6f2cd86b904f">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
@@ -39,7 +50,9 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="60641aad-6c64-441b-84db-0899e3c02a0f" />
+    <connection id="60641aad-6c64-441b-84db-0899e3c02a0f">
+      <session name="Session 1" id="f935a25c-82f0-4e6e-b222-d7b9fbc72f70" />
+    </connection>
     <connection id="cf38e1b7-146c-422b-986a-6f2cd86b904f" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
@@ -49,6 +62,14 @@
         <condition column="id" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
+    <filter-actions connection-id="60641aad-6c64-441b-84db-0899e3c02a0f" dataset="public.turmas_turma_matriculas" active-filter-id="EMPTY_FILTER">
+      <filter id="23407756-78e4-4127-900d-bec7b9cc0605" name="*" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="*" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="60641aad-6c64-441b-84db-0899e3c02a0f" dataset="public.turmas_matricula" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="60641aad-6c64-441b-84db-0899e3c02a0f" dataset="public.turmas_turma" active-filter-id="" />
+    <filter-actions connection-id="60641aad-6c64-441b-84db-0899e3c02a0f" dataset="public.django_migrations" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
