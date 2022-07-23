@@ -24,12 +24,11 @@
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
-    <show-object-properties value="true" />
+    <show-object-properties value="false" />
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="60641aad-6c64-441b-84db-0899e3c02a0f">
-      <console name="postgres@localhost" type="STANDARD" schema="public" session="Main"><![CDATA[SELECT m.id, m.titulo, a.id, a.titulo, a.modulo_id from modulos_modulo as m join modulos_aula a on m.id = a.modulo_id;]]></console>
     </connection>
     <connection id="cf38e1b7-146c-422b-986a-6f2cd86b904f">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
@@ -51,7 +50,6 @@
         <condition column="id" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="60641aad-6c64-441b-84db-0899e3c02a0f" dataset="public.base_user" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="60641aad-6c64-441b-84db-0899e3c02a0f" dataset="public.turmas_turma_matriculas" active-filter-id="EMPTY_FILTER">
       <filter id="23407756-78e4-4127-900d-bec7b9cc0605" name="*" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="id" operator="=" value="*" active="true" />

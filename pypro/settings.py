@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'pypro.base',
     'pypro.aperitivos',
     'pypro.modulos',
+    'pypro.turmas',
 ]
 
 MIDDLEWARE = [
