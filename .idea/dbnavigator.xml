@@ -29,18 +29,6 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="60641aad-6c64-441b-84db-0899e3c02a0f">
-      <console name="postgres@localhost" type="STANDARD" schema="public" session="Session 1"><![CDATA[SELECT
-    turma.id,
-    turma.nome,
-    matricula.*,
-    base_user.id,
-    base_user.email
-
-from
-    turmas_turma as turma
-
-inner join turmas_turma_matriculas as matricula on turma.id = matricula.turma_id
-inner join base_user on matricula.user_id = base_user.id]]></console>
     </connection>
     <connection id="cf38e1b7-146c-422b-986a-6f2cd86b904f">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
