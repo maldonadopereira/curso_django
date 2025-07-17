@@ -1,5 +1,10 @@
 [phases.setup]
-nixPkgs = ["python310", "pipenv"]
+nixPkgs = ["python310", "postgresql_16", "gcc", "curl", "wget"]
+cmds = [
+  "python3 -m ensurepip",
+  "python3 -m pip install --upgrade pip",
+  "python3 -m pip install pipenv"
+]
 
 [phases.install]
 cmds = [
