@@ -22,4 +22,4 @@ cmds = [
 ]
 
 [phases.start]
-cmd = "pipenv run gunicorn pypro.wsgi:application --bind 0.0.0.0:8000"
+cmd = "pipenv run gunicorn pypro.wsgi:application --bind 0.0.0.0:5005"
