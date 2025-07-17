@@ -1,0 +1,20 @@
+[phases.setup]
+nixPkgs = ["python310", "pipenv"]
+
+[phases.install]
+cmds = [
+  "PIPENV_VENV_IN_PROJECT=1 pipenv install --deploy"
+]
+
+[phases.build]
+cmds = [
+  "pipenv run python manage.py collectstatic --noinput"
+]
+
+[phases.release]
+cmds = [
+  "pipenv run python manage.py migrate --noinput"
+]
+
+[phases.start]
+cmd = "pipenv run gunicorn pypro.wsgi:application --bind 0.0.0.0:8000"
